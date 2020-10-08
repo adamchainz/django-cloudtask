@@ -16,7 +16,7 @@ class Command(BaseCommand):
     help = "Synchronise tasks with a cron setting with CloudScheduler"
 
     def handle(self, *args, **kwargs):
-        from django_cloudtask import schedule_registry
+        from django_cloudtask.task import schedule_registry
 
         client = CloudSchedulerClient()
         parent = client.location_path(settings.PROJECT_ID, settings.PROJECT_REGION)
